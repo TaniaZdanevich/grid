@@ -1,0 +1,48 @@
+.posts{
+   @extend %section; 
+
+    &-template{
+        @extend %container;
+    }
+    .posts h2{
+        margin-top: 0;
+    }
+    &-container{
+    display: grid;
+    padding-bottom: $gap;
+    grid-gap: $gap;
+    @include lg-min {
+        grid-template-areas: 
+        "p1 p1 p2 p3"
+        "p4 p5 p6 p6";
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include lg-md {
+        grid-template-areas: 
+        "p1 p1 p2"
+        "p3 p4 p4"
+        "p5 p5 p6";
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include md-sm {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+      }
+      @include sm {
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+      }
+    }
+    &__button{
+      @extend %btn-wrapper;
+      
+    }  
+}
+  
+  
+    
+        
+    
+
+    
+
